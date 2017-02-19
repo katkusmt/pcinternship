@@ -1,4 +1,5 @@
 ﻿@model pc_internship.Models.EmployeeModel
+@using pc_internship.GrossSalary
 
 @{
     ViewBag.Title = "Details";
@@ -25,7 +26,12 @@
         <dd>
             @Html.DisplayFor(model => model.EmployeeLastName)
         </dd>
-
+        <dt>
+            Darbuotojo atlyginimas prieš mokesčius
+        </dt>
+        <dd>
+            @GrossSalary.GetGrossSalary(Model.EmployeeNetSalary)
+        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.EmployeeNetSalary)
         </dt>
